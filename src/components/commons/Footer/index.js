@@ -1,6 +1,10 @@
+const SENHA_PREVIEW = process.env.DATO_PREVIEW;
+import { getCMSContent } from '../../../infra/cms/CMSProvider';
 import { Box, Link, Text, theme } from '../../../theme/components';
 
-export function Footer({description}) {
+export function Footer() {
+  // const description = getCMSContent().globalContent?.globalFooter?.description;
+  const description = getCMSContent('globalContent.globalFooter.description');
   return (
     <Box
       tag="footer"
@@ -28,7 +32,7 @@ export function Footer({description}) {
         </Text>
         {
           process.env.NODE_ENV !== 'production' && (
-            <Link href="/api/preview?password=SENHASEGURA">
+            <Link href={`/api/preview?password=${SENHA_PREVIEW}`}>
               Toggle Preview Mode
             </Link>
           )

@@ -1,3 +1,4 @@
+const SENHA_PREVIEW = process.env.DATO_PREVIEW;
 export default async function handler(req, res){
   const previousPage = req.headers.referer;
 
@@ -8,7 +9,7 @@ export default async function handler(req, res){
     return res.end();
   }
 
-  const password = 'SENHASEGURA';
+  const password = SENHA_PREVIEW;
 
   if(req.query.password !== password){
     return res.status(401).json({ message: 'Invalid password' });

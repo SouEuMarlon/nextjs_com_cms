@@ -64,9 +64,6 @@ export default function FAQQuestionScreen({ cmsContent }) {
       >
         <Box
           styleSheet={{
-            // display: 'flex',
-            // gap: theme.space.x4,
-            // flexDirection: 'column',
             width: '100%',
             maxWidth: theme.space.xcontainer_lg,
             marginHorizontal: 'auto',
@@ -92,7 +89,7 @@ export default function FAQQuestionScreen({ cmsContent }) {
         </Box>
       </Box>
 
-      <Footer description={cmsContent.globalContent.globalFooter.description}/>
+      <Footer />
     </>
   )
 }
